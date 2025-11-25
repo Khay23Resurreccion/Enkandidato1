@@ -1,0 +1,275 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\votingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\votingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\votingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\votingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\candidates.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\candidates.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\candidates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\candidates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\candidaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\candidaterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\addnewcandidates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\addnewcandidates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\addnewcandidates.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\addnewcandidates.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\converters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\converters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\votingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\votingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|c:\\users\\resur\\onedrive\\desktop\\ekandidato\\ekandidatoapp\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FF821FE-FE2E-459F-96EB-B2BB91807A25}|EkandidatoApp\\EkandidatoApp.csproj|solutionrelative:ekandidatoapp\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Candidates.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\Candidates.xaml.cs",
+              "RelativeDocumentMoniker": "EkandidatoApp\\Candidates.xaml.cs",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\Candidates.xaml.cs",
+              "RelativeToolTip": "EkandidatoApp\\Candidates.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T17:15:48.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddNewCandidates.xaml",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\AddNewCandidates.xaml",
+              "RelativeDocumentMoniker": "EkandidatoApp\\AddNewCandidates.xaml",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\AddNewCandidates.xaml",
+              "RelativeToolTip": "EkandidatoApp\\AddNewCandidates.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-24T15:22:09.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddNewCandidates.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\AddNewCandidates.xaml.cs",
+              "RelativeDocumentMoniker": "EkandidatoApp\\AddNewCandidates.xaml.cs",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\AddNewCandidates.xaml.cs",
+              "RelativeToolTip": "EkandidatoApp\\AddNewCandidates.xaml.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAuwLgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T15:15:08.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VotingPage.xaml",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\VotingPage.xaml",
+              "RelativeDocumentMoniker": "EkandidatoApp\\VotingPage.xaml",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\VotingPage.xaml",
+              "RelativeToolTip": "EkandidatoApp\\VotingPage.xaml",
+              "ViewState": "AgIAAPUAAAAAAAAAAAAUwBcBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-24T14:33:56.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VotingPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\VotingPage.xaml.cs",
+              "RelativeDocumentMoniker": "EkandidatoApp\\VotingPage.xaml.cs",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\VotingPage.xaml.cs",
+              "RelativeToolTip": "EkandidatoApp\\VotingPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T14:35:09.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Candidates.xaml",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\Candidates.xaml",
+              "RelativeDocumentMoniker": "EkandidatoApp\\Candidates.xaml",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\Candidates.xaml",
+              "RelativeToolTip": "EkandidatoApp\\Candidates.xaml",
+              "ViewState": "AgIAALEAAAAAAAAAAAAowM0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-24T17:15:21.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CandidateRepository.cs",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\CandidateRepository.cs",
+              "RelativeDocumentMoniker": "EkandidatoApp\\CandidateRepository.cs",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\CandidateRepository.cs",
+              "RelativeToolTip": "EkandidatoApp\\CandidateRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T15:59:37.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Converters.cs",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\Converters.cs",
+              "RelativeDocumentMoniker": "EkandidatoApp\\Converters.cs",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\Converters.cs",
+              "RelativeToolTip": "EkandidatoApp\\Converters.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T16:02:19.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminDashboard.xaml",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\AdminDashboard.xaml",
+              "RelativeDocumentMoniker": "EkandidatoApp\\AdminDashboard.xaml",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\AdminDashboard.xaml",
+              "RelativeToolTip": "EkandidatoApp\\AdminDashboard.xaml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-24T14:44:04.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomePage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\HomePage.xaml.cs",
+              "RelativeDocumentMoniker": "EkandidatoApp\\HomePage.xaml.cs",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\HomePage.xaml.cs",
+              "RelativeToolTip": "EkandidatoApp\\HomePage.xaml.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAIAwwHYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T14:41:55.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\HomePage.xaml",
+              "RelativeDocumentMoniker": "EkandidatoApp\\HomePage.xaml",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\HomePage.xaml",
+              "RelativeToolTip": "EkandidatoApp\\HomePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-24T14:41:47.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VotingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\VotingViewModel.cs",
+              "RelativeDocumentMoniker": "EkandidatoApp\\VotingViewModel.cs",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\VotingViewModel.cs",
+              "RelativeToolTip": "EkandidatoApp\\VotingViewModel.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACYAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T14:36:03.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "EkandidatoApp\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\LoginPage.xaml.cs",
+              "RelativeToolTip": "EkandidatoApp\\LoginPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T14:07:18.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "EkandidatoApp\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\resur\\OneDrive\\Desktop\\Ekandidato\\EkandidatoApp\\LoginPage.xaml",
+              "RelativeToolTip": "EkandidatoApp\\LoginPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-24T14:07:14.345Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
