@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EkandidatoApp.PublicWall"
+             Title="Public Wall Opinion"
+             BackgroundColor="#E5F3E5">
+
+    <ContentPage.Resources>
+        <x:Double x:Key="PostDetailFontSize">12</x:Double>
+        <Color x:Key="PrimaryGreenColor">#2E6A3E</Color>
+        <Color x:Key="LightBackgroundColor">#E5F3E5</Color>
+        <Color x:Key="CardBackgroundColor">White</Color>
+        <Color x:Key="BorderLightColor">#E0E0E0</Color>
+        <Color x:Key="TextColorDark">#333333</Color>
+        <Color x:Key="TextColorGray">#999999</Color>
+        <Color x:Key="InputBackgroundColor">#F0F0F0</Color>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems />
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20,10,20,20">
+
+            <Border BackgroundColor="{StaticResource CardBackgroundColor}" 
+                    StrokeShape="RoundRectangle 10" 
+                    Stroke="{StaticResource BorderLightColor}" 
+                    StrokeThickness="1"
+                    Padding="15">
+                <Grid ColumnDefinitions="*,Auto">
+                    <VerticalStackLayout Grid.Column="0" Spacing="5">
+                        <Label Text="Total Posts" TextColor="{StaticResource TextColorDark}" FontSize="18" FontAttributes="None"/>
+                        <Label Text="6" TextColor="{StaticResource TextColorDark}" FontSize="24" FontAttributes="Bold"/>
+                    </VerticalStackLayout>
+                    <Image Grid.Column="1" Source="comment_regular.png" HeightRequest="25" VerticalOptions="Start"/>
+                </Grid>
+            </Border>
+
+            <Border BackgroundColor="{StaticResource CardBackgroundColor}" 
+                    StrokeShape="RoundRectangle 10" 
+                    Stroke="{StaticResource BorderLightColor}" 
+                    StrokeThickness="1"
+                    Padding="15">
+                <VerticalStackLayout Spacing="15">
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Image Source="writecomment_icon.png" HeightRequest="24"/>
+                        <Label Text="Share Your Opinion" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource TextColorDark}" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <Label Text="Your post will be anonymous but visible to all students" FontSize="12" TextColor="{StaticResource TextColorGray}"/>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Category" FontSize="14" TextColor="{StaticResource TextColorDark}"/>
+
+                        <Border StrokeThickness="1" 
+                                Stroke="#CCCCCC"
+                                BackgroundColor="{StaticResource InputBackgroundColor}" 
+                                StrokeShape="RoundRectangle 5"
+                                Padding="10,0">
+                            <Picker Title="General Discussion" 
+                                    SelectedItem="{Binding SelectedCategory}"
+                                    TextColor="{StaticResource TextColorDark}"
+                                    FontSize="14"
+                                    HeightRequest="40"
+                                    TitleColor="{StaticResource TextColorDark}"
+                                    BackgroundColor="{StaticResource InputBackgroundColor}"
+                                    >
+                                <Picker.Items>
+                                    <x:String>General Discussion</x:String>
+                                    <x:String>Infrastructure</x:String>
+                                    <x:String>Facility</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="0">
+                        <Border StrokeThickness="1" 
+                                Stroke="#CCCCCC" 
+                                BackgroundColor="{StaticResource InputBackgroundColor}" 
+                                StrokeShape="RoundRectangle 5"
+                                Padding="10">
+                            <Editor Placeholder="Shares your thoughts, candidates, or school issues..." 
+                                    AutoSize="TextChanges" 
+                                    HeightRequest="60" 
+                                    MaxLength="500"
+                                    Text="{Binding NewPostContent}"
+                                    TextColor="{StaticResource TextColorDark}"
+                                    BackgroundColor="{StaticResource InputBackgroundColor}"
+                                    />
+                        </Border>
+
+                        <Label Text="0/500 characters" 
+                               HorizontalOptions="End" 
+                               FontSize="12"
+                               TextColor="{StaticResource TextColorGray}"
+                               Margin="0,5,5,0"/>
+                    </VerticalStackLayout>
+
+
+                    <Border BackgroundColor="{StaticResource PrimaryGreenColor}" 
+                            StrokeShape="RoundRectangle 5"  
+                            Padding="12,8"
+                            HorizontalOptions="Start"
+                            MaximumWidthRequest="150" 
+                            HeightRequest="40">
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PostCommand}" />
+                        </Border.GestureRecognizers>
+
+                        <HorizontalStackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image Source="post_icon.png" 
+                                   HeightRequest="18" 
+                                   WidthRequest="18" 
+                                   VerticalOptions="Center"/>
+                            <Label Text="Post" 
+                                   TextColor="{StaticResource CardBackgroundColor}" 
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </Border>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Frame BackgroundColor="{StaticResource CardBackgroundColor}" CornerRadius="10" Padding="15" HasShadow="True">
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Frame Grid.Column="0" CornerRadius="20" BackgroundColor="#F0F0F0" HeightRequest="40" WidthRequest="40" Padding="0" VerticalOptions="Start">
+                            <Label Text="" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="2" Margin="10,0,0,0">
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="2021-12345" TextColor="{StaticResource TextColorDark}" FontSize="{StaticResource PostDetailFontSize}" FontAttributes="Bold"/>
+                                <Frame CornerRadius="5" BackgroundColor="{StaticResource PrimaryGreenColor}" Padding="8,2" HeightRequest="20" VerticalOptions="Center" IsClippedToBounds="True">
+                                    <Label Text="Infrastructure" TextColor="{StaticResource CardBackgroundColor}" FontSize="10"/>
+                                </Frame>
+                            </HorizontalStackLayout>
+                            <Label Text="12 hours ago" TextColor="{StaticResource TextColorGray}" FontSize="10"/>
+                        </VerticalStackLayout>
+
+                        <HorizontalStackLayout Grid.Column="2" Spacing="5" VerticalOptions="Start">
+                            <Label Text="Report" TextColor="#666666" FontSize="{StaticResource PostDetailFontSize}" VerticalOptions="Center"/>
+                            <Image Source="report_icon.png" HeightRequest="20"/>
+                        </HorizontalStackLayout>
+                    </Grid>
+
+                    <Label Text="Can we please get better WiFi in the library? It's impossible to do research when the connection keeps dropping."
+                           TextColor="{StaticResource TextColorDark}"
+                           FontSize="14"
+                           Margin="0,5,0,0"/>
+
+                    <HorizontalStackLayout Spacing="20" Margin="0,5,0,0">
+                        <HorizontalStackLayout Spacing="5">
+                            <Image Source="heartunclick_icon.png" HeightRequest="20"/>
+                            <Label Text="69" TextColor="{StaticResource TextColorDark}" FontSize="{StaticResource PostDetailFontSize}" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="5">
+                            <Image Source="comment_solid.png" HeightRequest="20"/>
+                            <Label Text="12" TextColor="{StaticResource TextColorDark}" FontSize="{StaticResource PostDetailFontSize}" VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Border BackgroundColor="{StaticResource LightBackgroundColor}" 
+                    StrokeShape="RoundRectangle 10" 
+                    Stroke="{StaticResource PrimaryGreenColor}" 
+                    StrokeThickness="2" 
+                    Padding="15">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Community Guidelines" TextColor="{StaticResource PrimaryGreenColor}" FontSize="16" FontAttributes="Bold"/>
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="• Keep discussions respectful and constructive" TextColor="{StaticResource PrimaryGreenColor}" FontSize="12"/>
+                        <Label Text="• No personal attacks, harassment, or inappropriate content" TextColor="{StaticResource PrimaryGreenColor}" FontSize="12"/>
+                        <Label Text="• Focus on school issues and election-related topics" TextColor="{StaticResource PrimaryGreenColor}" FontSize="12"/>
+                        <Label Text="• Report inappropriate content using the flag button" TextColor="{StaticResource PrimaryGreenColor}" FontSize="12"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

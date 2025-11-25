@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EkandidatoApp.VotingPage"
+             xmlns:local="clr-namespace:EkandidatoApp"
+             Title="VotingPage"
+             x:Name="VotingRoot"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F4F7F6">
+
+
+    <!-- Resources -->
+    <ContentPage.Resources>
+        <Color x:Key="PrimaryGreen">#3E7C59</Color>
+        <Color x:Key="Muted">#6A7772</Color>
+        <Color x:Key="Dark">#2A2E2D</Color>
+
+        <Style x:Key="Card" TargetType="Border">
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="StrokeThickness" Value="0"/>
+            <Setter Property="Shadow">
+                <Setter.Value>
+                    <Shadow Brush="#33000000" Radius="10" Offset="0,2" Opacity="0.35"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="StrokeShape">
+                <Setter.Value>
+                    <RoundRectangle CornerRadius="14"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SectionHeader" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource Dark}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,12,0,6"/>
+        </Style>
+
+        <!-- Converters -->
+        <local:BoolToThickness x:Key="BoolToThickness"/>
+        <local:BoolToPickText x:Key="BoolToPickText"/>
+
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- App bar -->
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource PrimaryGreen}" Padding="12">
+            <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center">
+                <Label Text="☰" FontSize="22" TextColor="White" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="Vote" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalOptions="Center"/>
+            </Grid>
+        </Grid>
+
+        <!-- BODY -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="14" Spacing="12">
+
+                <!-- Info card -->
+                <Border Style="{StaticResource Card}" BackgroundColor="#E3F0E8" Padding="12">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="CAST YOUR VOTE NOW!" FontAttributes="Bold" TextColor="{StaticResource PrimaryGreen}"/>
+                        <Label Text="Please review each candidate carefully and choose one per position."
+                               TextColor="{StaticResource Dark}" FontSize="12"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- ==== PRESIDENT ==== -->
+                <Label Text="PRESIDENT" Style="{StaticResource SectionHeader}"/>
+                <CollectionView ItemsSource="{Binding President}" SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+
+                        <GridItemsLayout Orientation="Vertical" Span="1"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource Card}" Margin="0,0,0,10"
+                                    StrokeThickness="{Binding IsSelected, Converter={StaticResource BoolToThickness}}"
+                                    Stroke="{StaticResource PrimaryGreen}">
+                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                    <Border WidthRequest="44" HeightRequest="44" BackgroundColor="#F1F3F2">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="22"/>
+                                        </Border.StrokeShape>
+                                        <Image Source="{Binding PhotoPath}" Aspect="AspectFill"/>
+                                    </Border>
+
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="{StaticResource Dark}"/>
+                                        <Label Text="{Binding Party}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                        <Label Text="{Binding Slogan}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                    </VerticalStackLayout>
+
+                                    <Button Grid.Column="2"
+                                            Text="{Binding IsSelected, Converter={StaticResource BoolToPickText}}"
+                                            Padding="12,6" CornerRadius="10"
+                                            BackgroundColor="{StaticResource PrimaryGreen}" TextColor="White"
+                                            Command="{Binding Source={x:Reference VotingRoot}, Path=BindingContext.SelectCandidateCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- ==== VICE PRESIDENT ==== -->
+                <Label Text="VICE PRESIDENT" Style="{StaticResource SectionHeader}"/>
+                <CollectionView ItemsSource="{Binding VicePresident}" SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource Card}" Margin="0,0,0,10"
+                                    StrokeThickness="{Binding IsSelected, Converter={StaticResource BoolToThickness}}"
+                                    Stroke="{StaticResource PrimaryGreen}">
+                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                    <Border WidthRequest="44" HeightRequest="44" BackgroundColor="#F1F3F2">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="22"/>
+                                        </Border.StrokeShape>
+                                        <Image Source="{Binding PhotoPath}" Aspect="AspectFill"/>
+                                    </Border>
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="{StaticResource Dark}"/>
+                                        <Label Text="{Binding Party}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                        <Label Text="{Binding Slogan}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                    </VerticalStackLayout>
+                                    <Button Grid.Column="2"
+                                            Text="{Binding IsSelected, Converter={StaticResource BoolToPickText}}"
+                                            Padding="12,6" CornerRadius="10"
+                                            BackgroundColor="{StaticResource PrimaryGreen}" TextColor="White"
+                                            Command="{Binding Source={x:Reference VotingRoot}, Path=BindingContext.SelectCandidateCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- ==== SECRETARY ==== -->
+                <Label Text="SECRETARY" Style="{StaticResource SectionHeader}"/>
+                <CollectionView ItemsSource="{Binding Secretary}" SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource Card}" Margin="0,0,0,10"
+                                    StrokeThickness="{Binding IsSelected, Converter={StaticResource BoolToThickness}}"
+                                    Stroke="{StaticResource PrimaryGreen}">
+                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                    <Border WidthRequest="44" HeightRequest="44" BackgroundColor="#F1F3F2">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="22"/>
+                                        </Border.StrokeShape>
+                                        <Image Source="{Binding PhotoPath}" Aspect="AspectFill"/>
+                                    </Border>
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="{StaticResource Dark}"/>
+                                        <Label Text="{Binding Party}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                        <Label Text="{Binding Slogan}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                    </VerticalStackLayout>
+                                    <Button Grid.Column="2"
+                                            Text="{Binding IsSelected, Converter={StaticResource BoolToPickText}}"
+                                            Padding="12,6" CornerRadius="10"
+                                            BackgroundColor="{StaticResource PrimaryGreen}" TextColor="White"
+                                            Command="{Binding Source={x:Reference VotingRoot}, Path=BindingContext.SelectCandidateCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- ==== TREASURER ==== -->
+                <Label Text="TREASURER" Style="{StaticResource SectionHeader}"/>
+                <CollectionView ItemsSource="{Binding Treasurer}" SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource Card}" Margin="0,0,0,10"
+                                    StrokeThickness="{Binding IsSelected, Converter={StaticResource BoolToThickness}}"
+                                    Stroke="{StaticResource PrimaryGreen}">
+                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                    <Border WidthRequest="44" HeightRequest="44" BackgroundColor="#F1F3F2">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="22"/>
+                                        </Border.StrokeShape>
+                                        <Image Source="{Binding PhotoPath}" Aspect="AspectFill"/>
+                                    </Border>
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="{StaticResource Dark}"/>
+                                        <Label Text="{Binding Party}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                        <Label Text="{Binding Slogan}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                    </VerticalStackLayout>
+                                    <Button Grid.Column="2"
+                                            Text="{Binding IsSelected, Converter={StaticResource BoolToPickText}}"
+                                            Padding="12,6" CornerRadius="10"
+                                            BackgroundColor="{StaticResource PrimaryGreen}" TextColor="White"
+                                            Command="{Binding Source={x:Reference VotingRoot}, Path=BindingContext.SelectCandidateCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- ==== PRO ==== -->
+                <Label Text="PRO" Style="{StaticResource SectionHeader}"/>
+                <CollectionView ItemsSource="{Binding PRO}" SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource Card}" Margin="0,0,0,10"
+                                    StrokeThickness="{Binding IsSelected, Converter={StaticResource BoolToThickness}}"
+                                    Stroke="{StaticResource PrimaryGreen}">
+                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                    <Border WidthRequest="44" HeightRequest="44" BackgroundColor="#F1F3F2">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="22"/>
+                                        </Border.StrokeShape>
+                                        <Image Source="{Binding PhotoPath}" Aspect="AspectFill"/>
+                                    </Border>
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="{StaticResource Dark}"/>
+                                        <Label Text="{Binding Party}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                        <Label Text="{Binding Slogan}" FontSize="11" TextColor="{StaticResource Muted}"/>
+                                    </VerticalStackLayout>
+                                    <Button Grid.Column="2"
+                                            Text="{Binding IsSelected, Converter={StaticResource BoolToPickText}}"
+                                            Padding="12,6" CornerRadius="10"
+                                            BackgroundColor="{StaticResource PrimaryGreen}" TextColor="White"
+                                            Command="{Binding Source={x:Reference VotingRoot}, Path=BindingContext.SelectCandidateCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Selections -->
+                <Label Text="Your Selections" Style="{StaticResource SectionHeader}" Margin="0,4,0,0"/>
+                <Border Style="{StaticResource Card}">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" ColumnSpacing="10" RowSpacing="10">
+                        <Label Text="President:" FontSize="12" TextColor="{StaticResource Muted}"/>
+                        <Label Grid.Column="1" Text="{Binding SelectedPresident.Name, TargetNullValue=Not selected}" FontSize="12" TextColor="{StaticResource Dark}"/>
+
+                        <Label Grid.Row="1" Text="Vice President:" FontSize="12" TextColor="{StaticResource Muted}"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding SelectedVicePresident.Name, TargetNullValue=Not selected}" FontSize="12" TextColor="{StaticResource Dark}"/>
+
+                        <Label Grid.Row="2" Text="Secretary:" FontSize="12" TextColor="{StaticResource Muted}"/>
+                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding SelectedSecretary.Name, TargetNullValue=Not selected}" FontSize="12" TextColor="{StaticResource Dark}"/>
+
+                        <Label Grid.Row="3" Text="Treasurer:" FontSize="12" TextColor="{StaticResource Muted}"/>
+                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding SelectedTreasurer.Name, TargetNullValue=Not selected}" FontSize="12" TextColor="{StaticResource Dark}"/>
+
+                        <Label Grid.Row="4" Text="PRO:" FontSize="12" TextColor="{StaticResource Muted}"/>
+                        <Label Grid.Row="4" Grid.Column="1" Text="{Binding SelectedPRO.Name, TargetNullValue=Not selected}" FontSize="12" TextColor="{StaticResource Dark}"/>
+                    </Grid>
+                </Border>
+
+                <!-- SUBMIT -->
+                <Button Text="SUBMIT VOTE"
+                        BackgroundColor="{StaticResource PrimaryGreen}"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Padding="20,12"
+                        IsEnabled="{Binding IsReady}"
+                        Clicked="SubmitVote_Clicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>

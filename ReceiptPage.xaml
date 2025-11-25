@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EkandidatoApp.ReceiptPage"
+             Title="Vote Recorded"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="Auto, *">
+        <Grid Grid.Row="0" Padding="15, 10, 15, 0">
+            <ImageButton Source="back_arrow.png" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="24" HeightRequest="24" Clicked="OnBackButtonClicked" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="30, 0, 30, 30" Spacing="25">
+
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label Text="✔" FontSize="40" TextColor="Green" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, 0, 0, 10" />
+                    <Label Text="Vote Successfully Recorded!" FontSize="Title" FontAttributes="Bold" TextColor="#333333" HorizontalTextAlignment="Center" />
+                    <Label Text="Your vote has been securely recorded and will be counted in the election." FontSize="Caption" TextColor="Gray" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+
+                <Border StrokeShape="RoundRectangle 10" StrokeThickness="0" BackgroundColor="#E8F5E9" Padding="20" Margin="0, 10, 0, 0">
+
+                    <VerticalStackLayout Spacing="20">
+
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                            <Label Text="☑️ VOTING RECEIPT" FontSize="Medium" FontAttributes="Bold" TextColor="#388E3C" HorizontalTextAlignment="Center" />
+                            <Label Text="Official confirmation of your vote" FontSize="Caption" TextColor="#4CAF50" HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+
+                        <BoxView HeightRequest="1" Color="#DCE7D8" />
+
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto, Auto" ColumnSpacing="15">
+                            <Label Grid.Row="0" Grid.Column="0" Text="🧾 Receipt ID" FontSize="Micro" TextColor="Gray" />
+                            <Label x:Name="ReceiptIDLabel" Grid.Row="1" Grid.Column="0" Text="[ID Placeholder]" FontSize="Default" TextColor="#333333" FontAttributes="Bold" />
+
+                            <Label Grid.Row="0" Grid.Column="1" Text="📅 Date and Time" FontSize="Micro" TextColor="Gray" />
+                            <Label x:Name="DateTimeLabel" Grid.Row="1" Grid.Column="1" Text="[Date Placeholder]" FontSize="Default" TextColor="#333333" FontAttributes="Bold" />
+                        </Grid>
+
+                        <BoxView HeightRequest="1" Color="#DCE7D8" />
+
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto, Auto, Auto" ColumnSpacing="15">
+                            <Label Grid.Row="0" Grid.Column="0" Text="👤 Student Information" FontSize="Micro" TextColor="Gray" />
+                            <Label x:Name="StudentNameLabel" Grid.Row="1" Grid.Column="0" Text="[Name Placeholder]" FontSize="Default" TextColor="#333333" />
+                            <Label x:Name="StudentIDLabel" Grid.Row="2" Grid.Column="0" Text="[ID Placeholder]" FontSize="Small" TextColor="Gray" />
+                            <Label x:Name="StudentGradeLabel" Grid.Row="3" Grid.Column="0" Text="[Grade Placeholder]" FontSize="Small" TextColor="Gray" />
+
+                            <Label Grid.Row="0" Grid.Column="1" Text="⭕ Election ID" FontSize="Micro" TextColor="Gray" />
+                            <Label x:Name="ElectionIDLabel" Grid.Row="1" Grid.Column="1" Text="[EID Placeholder]" FontSize="Default" TextColor="#333333" />
+                        </Grid>
+
+                        <BoxView HeightRequest="1" Color="#DCE7D8" />
+
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Votes Cast" FontSize="Medium" FontAttributes="Bold" TextColor="#333333" />
+
+                            <StackLayout x:Name="VotesCastStack" Spacing="10" />
+
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="15">
+
+                    <Button Grid.Column="0" Text="Download Receipt" BackgroundColor="#1A5319" TextColor="White" CornerRadius="8" HeightRequest="50" Clicked="OnDownloadReceiptClicked" />
+                    <Button Grid.Column="1" Text="Email Receipt" BackgroundColor="#E8F5E9" TextColor="#1A5319" BorderColor="#1A5319" BorderWidth="1" CornerRadius="8" HeightRequest="50" Clicked="OnEmailReceiptClicked" />
+
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

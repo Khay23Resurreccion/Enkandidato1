@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="EkandidatoApp.Candidates"
+    Title="Candidate Profiles"
+    BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Header -->
+            <Grid ColumnDefinitions="Auto, *">
+                <Image Source="icon_arrow_left.png"
+                       HeightRequest="20"
+                       WidthRequest="20"
+                       VerticalOptions="Center"
+                       Margin="0,0,5,0"/>
+                <VerticalStackLayout Grid.Column="1">
+                    <!--<Label Text="Candidate Profiles"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>-->
+                    <Label Text="Learn about each candidate's platforms and achievements"
+                           FontSize="12"
+                           TextColor="#666666"/>
+                </VerticalStackLayout>
+            </Grid>
+
+            <!-- Position Tabs -->
+            <Label Text="Select Position"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,0"/>
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                <HorizontalStackLayout x:Name="PositionTabsLayout"
+                                       Spacing="10"
+                                       Padding="0,0,20,0"/>
+            </ScrollView>
+
+            <!-- Candidate Cards -->
+            <CollectionView x:Name="CandidatesCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border StrokeShape="RoundRectangle 12"
+                                Stroke="#E0E0E0"
+                                StrokeThickness="1"
+                                BackgroundColor="White"
+                                Padding="15"
+                                Margin="0,0,0,10">
+                            <Border.Shadow>
+                                <Shadow Brush="#00000025" Offset="0,3" Radius="5"/>
+                            </Border.Shadow>
+
+                            <VerticalStackLayout Spacing="10">
+
+                                <!-- Candidate Header with Image -->
+                                <Grid ColumnDefinitions="80, *" ColumnSpacing="10">
+                                    <Frame HeightRequest="75"
+                                           WidthRequest="75"
+                                           CornerRadius="40"
+                                           Padding="0">
+                                        <Image Source="{Binding Photo}"
+                                               Aspect="AspectFill"/>
+                                    </Frame>
+                                    <VerticalStackLayout Grid.Column="1"
+                                                         VerticalOptions="Center">
+                                        <Label Text="{Binding Name}"
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
+                                        <Label Text="{Binding Party}"
+                                               FontSize="12"
+                                               TextColor="#666"/>
+                                        <Label Text="{Binding Motto}"
+                                               FontSize="11"
+                                               TextColor="#5E936C"
+                                               FontAttributes="Italic"/>
+                                    </VerticalStackLayout>
+                                </Grid>
+
+                                <!-- Tabs -->
+                                <Grid ColumnDefinitions="*,*,*" HeightRequest="35">
+                                    <Button Grid.Column="0" Text="Platforms"
+                                            Clicked="OnTabClicked"
+                                            CommandParameter="Platforms"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            BackgroundColor="{Binding ActiveTabColor_Platforms}"
+                                            TextColor="{Binding ActiveTabTextColor_Platforms}"/>
+
+                                    <Button Grid.Column="1" Text="Achievements"
+                                            Clicked="OnTabClicked"
+                                            CommandParameter="Achievements"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            BackgroundColor="{Binding ActiveTabColor_Achievements}"
+                                            TextColor="{Binding ActiveTabTextColor_Achievements}"/>
+
+                                    <Button Grid.Column="2" Text="Media"
+                                            Clicked="OnTabClicked"
+                                            CommandParameter="Media"
+                                            FontSize="12"
+                                            FontAttributes="Bold"
+                                            BackgroundColor="{Binding ActiveTabColor_Media}"
+                                            TextColor="{Binding ActiveTabTextColor_Media}"/>
+                                </Grid>
+
+                                <!-- Platforms -->
+                                <StackLayout IsVisible="{Binding IsPlatformsVisible}">
+                                    <CollectionView ItemsSource="{Binding Platforms}"
+                                                    SelectionMode="None"
+                                                    Margin="0,0,0,8">
+                                        <CollectionView.ItemsLayout>
+                                            <LinearItemsLayout Orientation="Vertical"
+                                                               ItemSpacing="3"/>
+                                        </CollectionView.ItemsLayout>
+
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame BackgroundColor="#E6F2FF"
+                                                       CornerRadius="6"
+                                                       Padding="8,4"
+                                                       Margin="0,2,0,0"
+                                                       HasShadow="False"
+                                                       BorderColor="#C7E2FF">
+                                                    <Label Text="{Binding}"
+                                                           TextColor="#0066CC"
+                                                           FontSize="12"
+                                                           VerticalOptions="Center"
+                                                           LineBreakMode="WordWrap"/>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+
+                                <!-- Achievements -->
+                                <StackLayout IsVisible="{Binding IsAchievementsVisible}">
+                                    <CollectionView ItemsSource="{Binding Achievements}"
+                                                    SelectionMode="None"
+                                                    Margin="0,0,0,8">
+                                        <CollectionView.ItemsLayout>
+                                            <LinearItemsLayout Orientation="Vertical"
+                                                               ItemSpacing="3"/>
+                                        </CollectionView.ItemsLayout>
+
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame BackgroundColor="#E8F5E9"
+                                                       CornerRadius="6"
+                                                       Padding="8,4"
+                                                       Margin="0,2,0,0"
+                                                       HasShadow="False"
+                                                       BorderColor="#B7E1BB">
+                                                    <Label Text="{Binding}"
+                                                           TextColor="#2E7D32"
+                                                           FontSize="12"
+                                                           VerticalOptions="Center"
+                                                           LineBreakMode="WordWrap"/>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+
+                                <!-- Media -->
+                                <StackLayout IsVisible="{Binding IsMediaVisible}">
+                                    <!-- Video Placeholder -->
+                                    <Frame BackgroundColor="#E0E0E0"
+                                           HeightRequest="140"
+                                           CornerRadius="10"
+                                           Margin="0,0,0,8"
+                                           HasShadow="False">
+                                        <Grid>
+                                            <Image Source="icon_play.png"
+                                                   WidthRequest="45"
+                                                   HeightRequest="45"
+                                                   VerticalOptions="Center"
+                                                   HorizontalOptions="Center"/>
+                                        </Grid>
+                                    </Frame>
+
+                                    <Button Text="▶ Watch Campaign Video"
+                                            BackgroundColor="#1E1E1E"
+                                            TextColor="White"
+                                            CornerRadius="8"
+                                            HeightRequest="40"
+                                            CommandParameter="{Binding CampaignVideoUrl}"
+                                            Clicked="OnWatchVideoClicked"/>
+                                    <Label Text="{Binding Email}"
+                                           FontSize="13"
+                                           TextColor="#1E1E1E"/>
+                                    <Label Text="{Binding Phone}"
+                                           FontSize="13"
+                                           TextColor="#1E1E1E"/>
+                                </StackLayout>
+
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

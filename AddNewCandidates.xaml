@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EkandidatoApp.AddNewCandidates"
+             Title="AddNewCandidates"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#D9E9DE">
+
+
+    <!-- Reusable styles -->
+    <ContentPage.Resources>
+        <Color x:Key="PrimaryGreen">#3E7C59</Color>
+        <Color x:Key="MutedText">#6A7772</Color>
+        <Color x:Key="Divider">#E1E6E2</Color>
+
+
+        <!-- Dashed upload area -->
+        <Style x:Key="DashedUpload" TargetType="Border">
+            <Setter Property="Stroke" Value="#C9D2CD"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="StrokeDashArray" Value="6,6"/>
+            <Setter Property="BackgroundColor" Value="#FBFBFB"/>
+            <Setter Property="Padding" Value="14"/>
+            <Setter Property="StrokeShape">
+                <Setter.Value>
+                    <RoundRectangle CornerRadius="10"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SectionTitle" TargetType="Label">
+            <Setter Property="TextColor" Value="#2A2E2D"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,10,0,4"/>
+        </Style>
+
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="18,14"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="FormEntry" TargetType="Entry">
+            <Setter Property="TextColor" Value="#222222"/>
+            <Setter Property="PlaceholderColor" Value="#6A7772"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="18" Spacing="14">
+
+            <!-- Header -->
+            <Label Text="INPUT YOUR PARTY LIST:" TextColor="{StaticResource MutedText}" Margin="0,8,0,6"/>
+
+            <!-- PARTY LIST NAME -->
+            <Label Text="PARTY LIST NAME:" Style="{StaticResource SectionTitle}"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="PartyNameEntry" Placeholder="Enter Party List Name" Style="{StaticResource FormEntry}"/>
+
+            <!-- COVER PHOTO -->
+            <Label Text="UPLOAD PARTY LIST COVER PHOTO:" Style="{StaticResource SectionTitle}" Margin="0,12,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,10"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="🖼️" VerticalOptions="Center"/>
+                    <!-- This label gets updated with the chosen filename -->
+                    <Label x:Name="CoverHint" Grid.Column="1" Text="Choose your cover photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnChooseCoverClicked"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- PRESIDENT -->
+            <Label Text="PRESIDENT:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="PresidentNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}" />
+            <Entry x:Name="PresidentYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="PresHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickPresidentPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- VICE-PRESIDENT -->
+            <Label Text="VICE-PRESIDENT:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="VPNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="VPYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="VpHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickVPPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- SECRETARY -->
+            <Label Text="SECRETARY:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="SecNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="SecYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="SecHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickSecPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- TREASURER -->
+            <Label Text="TREASURER:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="TreasNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="TreasYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="TreasHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickTreasPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- PRO -->
+            <Label Text="PRO:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="ProNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="ProYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="ProHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickProPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- SENIOR HIGH REP -->
+            <Label Text="SENIOR HIGH REPRESENTATIVE:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="SHRepNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="SHRepYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="SHRepHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickSHRepPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- FIRST YEAR REP -->
+            <Label Text="FIRST YEAR REPRESENTATIVE:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="FYRepNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="FYRepYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="FYRepHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickFYRepPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- SECOND YEAR REP -->
+            <Label Text="SECOND YEAR REPRESENTATIVE:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="SYRepNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="SYRepYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="SYRepHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickSYRepPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- THIRD YEAR REP -->
+            <Label Text="THIRD YEAR REPRESENTATIVE:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="TYRepNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="TYRepYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="TYRepHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickTYRepPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- FOURTH YEAR REP -->
+            <Label Text="FOURTH YEAR REPRESENTATIVE:" Style="{StaticResource SectionTitle}" Margin="0,16,0,4"/>
+            <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0,0,8"/>
+            <Entry x:Name="FoYRepNameEntry" Placeholder="STUDENT NAME:" Style="{StaticResource FormEntry}"/>
+            <Entry x:Name="FoYRepYS" Placeholder="YEAR and SECTION:" Style="{StaticResource FormEntry}"/>
+            <Border Style="{StaticResource DashedUpload}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                    <Label Text="📷" VerticalOptions="Center"/>
+                    <Label x:Name="FoYRepHint" Grid.Column="1" Text="Choose your photo"
+                           TextColor="{StaticResource MutedText}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPickFoYRepPhoto"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <!-- SUBMIT -->
+            <Button Text="SUBMIT CANDIDATE"
+                    Style="{StaticResource ActionButton}"
+                    BackgroundColor="{StaticResource PrimaryGreen}"
+                    TextColor="White"
+                    Margin="0,20,0,8"
+                    Clicked="OnSubmitClicked"/>
+
+            <Label x:Name="ErrorLabel" TextColor="#E53935" IsVisible="False"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

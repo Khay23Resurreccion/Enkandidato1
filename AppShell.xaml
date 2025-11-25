@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EkandidatoApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EkandidatoApp"
+    Shell.TabBarIsVisible="False"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.CurrentItem="{x:Reference LoginPage}">
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Border StrokeShape="RoundRectangle 10" 
+                    Margin="10, 5, 10, 5"
+                    HeightRequest="50">
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid Padding="15" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="{Binding Icon}"
+                           Grid.Column="0"
+                           WidthRequest="24"
+                           HeightRequest="24"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="{Binding Title}"
+                           Grid.Column="1"
+                           TextColor="#2E6A3E" 
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center" />
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.FlyoutHeader>
+        <Image Source="ekan"
+               Aspect="AspectFill"
+               HeightRequest="180"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"/>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Dashboard" 
+                FlyoutDisplayOptions="AsMultipleItems" 
+                Route="HomeRoot">
+        <ShellContent
+            Title="Home"
+            Route="HomePage"
+            ContentTemplate="{DataTemplate local:HomePage}"
+            Icon="home_icon.png"/>
+        <ShellContent
+            Title="Election Calendar"
+            Route="ElectionCalendar"
+            ContentTemplate="{DataTemplate local:ElectionCalendar}"
+            Icon="calendar_icon.png"/>
+        <ShellContent
+            Title="Receipt Page"
+            Route="ReceiptPage"
+            ContentTemplate="{DataTemplate local:ReceiptPage}"
+            Icon="graph_icon.png"/>
+        <ShellContent
+            Title="Public Wall Opinion"
+            Route="PublicWall"
+            ContentTemplate="{DataTemplate local:PublicWall}"
+            Icon="public_opinion.png"/>
+        <ShellContent
+            Title="About Us"
+            Route="AboutUs"
+            ContentTemplate="{DataTemplate local:AboutUs}"
+            Icon="about_icon.png"/>
+    </FlyoutItem>
+
+    <ShellContent 
+        x:Name="LoginPage"
+        Route="LoginPage"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Shell.FlyoutItemIsVisible="False" />
+    <ShellContent 
+        Route="ForgotPage" 
+        ContentTemplate="{DataTemplate local:ForgotPage}"
+        Shell.FlyoutItemIsVisible="False" />
+    <ShellContent 
+        Route="CreatePassword" 
+        ContentTemplate="{DataTemplate local:CreatePassword}"
+        Shell.FlyoutItemIsVisible="False" />
+    
+
+    <Shell.FlyoutFooter>
+        <Grid HeightRequest="70" BackgroundColor="#2E6A3E">
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="5">
+                <Label Text="Version 1.0.0"
+                       TextColor="White"
+                       FontSize="12"
+                       HorizontalTextAlignment="Center" />
+                <Label Text="2025 Ekandidato App. All rights reserved."
+                       TextColor="White"
+                       FontSize="11"
+                       HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutFooter>
+</Shell>

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EkandidatoApp.HomePage"
+             Title="Home"
+             BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <Grid Grid.Row="0" BackgroundColor="#5E936C" Padding="10, 15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="menu_icon.png" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0"/>
+
+            <Image Grid.Column="1" Source="ekandidato_logo1.png" HeightRequest="30" WidthRequest="150" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center" />
+            <BoxView Grid.Column="2" WidthRequest="25" Color="#5E936C" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="0, 10, 0, 80">
+
+                <Border StrokeShape="RoundRectangle 10" Margin="20, 10" Padding="15" BackgroundColor="White" Stroke="LightGray">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Opacity="0.1" Radius="5" Offset="0, 3"/>
+                    </Border.Shadow>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <VerticalStackLayout Grid.Column="0">
+                            <Label Text="Welcome," FontSize="14" TextColor="Black" />
+                            <Label x:Name="UserNameLabel" Text="Marieden Daniell!" FontAttributes="Bold" FontSize="18" TextColor="Black" Margin="0,2,0,0"/>
+                            <Label x:Name="StudentIDLabel" Text="Student ID: 2021123456" FontSize="11" TextColor="Gray" Margin="0,5,0,0"/>
+                            <Label x:Name="GradeLevelLabel" Text="Grade 12-A" FontSize="11" TextColor="Gray"/>
+                        </VerticalStackLayout>
+
+                        <Border Grid.Column="1" StrokeShape="RoundRectangle 20" BackgroundColor="#D4EDDA" Padding="10, 5" HorizontalOptions="End" VerticalOptions="Start">
+                            <Label x:Name="EligibilityLabel" Text="Eligible to vote!" FontSize="10" TextColor="#155724" FontAttributes="Bold"/>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Label Text="Election Countdown" FontSize="16" FontAttributes="Bold" TextColor="Black" Margin="20,20,0,5"/>
+                <Border Stroke="LightGray" StrokeShape="RoundRectangle 15" Padding="15" Margin="20,0">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#5E936C" Offset="0.0" />
+                            <GradientStop Color="#F4EB16" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Welcome to Ekandidato!" FontSize="14" TextColor="Black"/>
+                        <Label x:Name="ElectionInfoLabel" FontSize="9" TextColor="Black" Margin="0,5,0,10" Text="You are now ready to participate in the Student Election for S.Y. 2025-2026." />
+
+                        <Grid ColumnSpacing="10" HorizontalOptions="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                                <Border BackgroundColor="#497455" Padding="10" WidthRequest="60" HeightRequest="60" StrokeShape="RoundRectangle 15">
+                                    <Label x:Name="DaysLeftLabel" Text="03" TextColor="White" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <Label Text="days" FontSize="12" TextColor="White" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                                <Border BackgroundColor="#497455" Padding="10" WidthRequest="60" HeightRequest="60" StrokeShape="RoundRectangle 15">
+                                    <Label x:Name="HoursLeftLabel" Text="02" TextColor="White" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <Label Text="hours" FontSize="12" TextColor="White" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                                <Border BackgroundColor="#497455" Padding="10" WidthRequest="60" HeightRequest="60" StrokeShape="RoundRectangle 15">
+                                    <Label x:Name="MinutesLeftLabel" Text="38" TextColor="White" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <Label Text="mins" FontSize="12" TextColor="White" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center">
+                                <Border BackgroundColor="#497455" Padding="10" WidthRequest="60" HeightRequest="60" StrokeShape="RoundRectangle 15">
+                                    <Label x:Name="SecondsLeftLabel" Text="12" TextColor="White" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Border>
+                                <Label Text="sec" FontSize="12" TextColor="White" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <Label x:Name="DaysLeftMessageLabel" Text="You have 3 days left to vote. Let your voice be heard!" TextColor="Red" FontSize="10" HorizontalOptions="Center" Margin="0,10,0,0" />
+
+                        <Button Text="Vote Now" BackgroundColor="#497455" TextColor="White" CornerRadius="10" WidthRequest="200" Margin="0,10,0,0" HorizontalOptions="Center" Clicked="OnVoteNowClicked">
+                            <Button.Shadow>
+                                <Shadow Brush="Black" Opacity="0.3" Radius="8" Offset="0,5"/>
+                            </Button.Shadow>
+                        </Button>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Real-time Leading Candidate!" FontSize="16" FontAttributes="Bold" TextColor="Black" Margin="20,20,0,5"/>
+                <Border Stroke="LightGray" StrokeShape="RoundRectangle 15" Padding="15" Margin="20,0" BackgroundColor="#FFF0F0">
+                    <VerticalStackLayout>
+                        <Label Text="PRESIDENT" FontSize="14" FontAttributes="Bold" Margin="0,0,0,10" TextColor="Black" />
+
+                        <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15">
+                            <VerticalStackLayout Grid.Column="0" Spacing="15" VerticalOptions="Start">
+                                <Image Source="candidate_placeholder1.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" BackgroundColor="LightGray"/>
+                                <Image Source="candidate_placeholder2.png" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" BackgroundColor="LightGray"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="10">
+                                <VerticalStackLayout Spacing="3">
+                                    <Label x:Name="Candidate1NameLabel" Text="Jung, Haein" FontAttributes="Bold" TextColor="Black"/>
+                                    <Grid ColumnDefinitions="*, Auto">
+                                        <ProgressBar x:Name="Candidate1ProgressBar" Grid.Column="0" Progress="0.8" ProgressColor="#5E936C" HeightRequest="10" VerticalOptions="Center"/>
+                                        <Label x:Name="Candidate1VotesLabel" Grid.Column="1" Text="800 Votes" FontSize="12" TextColor="Black" Margin="10,0,0,0"/>
+                                    </Grid>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Spacing="3" Margin="0,5,0,0">
+                                    <Label x:Name="Candidate2NameLabel" Text="Kim, Mingyu" FontAttributes="Bold" TextColor="Black"/>
+                                    <Grid ColumnDefinitions="*, Auto">
+                                        <ProgressBar x:Name="Candidate2ProgressBar" Grid.Column="0" Progress="0.6" ProgressColor="#8BC34A" HeightRequest="10" VerticalOptions="Center"/>
+                                        <Label x:Name="Candidate2VotesLabel" Grid.Column="1" Text="600 Votes" FontSize="12" TextColor="Black" Margin="10,0,0,0"/>
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <Label x:Name="LastUpdateLabel" Text="Vote count as of August 18, 2025 5:00PM" FontSize="10" TextColor="Gray" HorizontalOptions="Center" Margin="0,15,0,0"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Live: Candidate Debate Streaming" FontSize="16" FontAttributes="Bold" TextColor="Black" Margin="20,20,0,5"/>
+                <Border Stroke="LightGray" StrokeShape="RoundRectangle 15" Padding="15" Margin="20,0" BackgroundColor="Black" HeightRequest="200" HorizontalOptions="FillAndExpand">
+                    <Label x:Name="DebateStatusLabel" Text="Video Stream Placeholder (Embed Link Here)" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18"/>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Grid Grid.Row="1" VerticalOptions="End" RowDefinitions="Auto" Margin="0,0,0,0">
+            <Grid.Shadow>
+                <Shadow Brush="Black" Opacity="0.1" Radius="5" Offset="0,-3"/>
+            </Grid.Shadow>
+
+            <Grid HeightRequest="70" BackgroundColor="#5E936C" RowDefinitions="*">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavIconTapped" CommandParameter="Home"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Opacity" Value="0.7" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <Image Source="home_icon.png" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" Margin="0, 0, 0, 0"/>
+                    <Label Text="HOME" FontSize="10" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,0"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavIconTapped" CommandParameter="Candidates"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Opacity" Value="0.7" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <Image Source="candidates_icon.png" HeightRequest="25"/>
+                    <Label Text="CANDIDATES" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center">
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavIconTapped" CommandParameter="PollHistory"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Opacity" Value="0.7" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <Image Source="graph_icon.png" HeightRequest="25"/>
+                    <Label Text="POLL HISTORY" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center">
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNavIconTapped" CommandParameter="Profile"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Opacity" Value="0.7" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <Image Source="user_icon.png" HeightRequest="25"/>
+                    <Label Text="PROFILE" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+
+                <Grid Grid.Column="2"
+                      WidthRequest="80"
+                      HeightRequest="80"
+                      Margin="0,-30,0,0"
+                      HorizontalOptions="Center"
+                      VerticalOptions="Start">
+
+                    <Ellipse Fill="#29402f" 
+                             WidthRequest="80" 
+                             HeightRequest="80"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+                        <Ellipse.Shadow>
+                            <Shadow Brush="Black" Opacity="0.4" Radius="15" Offset="0,8"/>
+                        </Ellipse.Shadow>
+                    </Ellipse>
+
+                    <Border StrokeShape="RoundRectangle 35" 
+                            BackgroundColor="#497455" 
+                            WidthRequest="70" 
+                            HeightRequest="70"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Padding="0">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnNavIconTapped" CommandParameter="Vote"/>
+                        </Border.GestureRecognizers>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#29402f" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <VerticalStackLayout Spacing="2" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image Source="vote_icon.png" 
+                                   WidthRequest="30" 
+                                   HeightRequest="30"
+                                   Margin="0,0,0,-5"/>
+                            <Label Text="VOTE" 
+                                   FontSize="10" 
+                                   TextColor="White" 
+                                   FontAttributes="Bold"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
